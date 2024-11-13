@@ -26,7 +26,7 @@
             FontSize="50"
             TextColor="Gold"/>
 
-        <Frame Padding="10">
+        <Frame Padding="10" BackgroundColor="PaleGoldenrod">
             <VerticalStackLayout>
                 <Grid RowDefinitions="Auto, Auto"
                       ColumnDefinitions="*, *, 2*">
@@ -64,17 +64,20 @@
                 <Label Text="Escolha sua Suíte"/>
 
                 <Picker x:Name="pck_quarto"
-                        Title="Selecione sua Acomodação"/>
+                        Title="Selecione sua Acomodação"
+                        ItemDisplayBinding="{Binding Descricao}"/>
 
                 <Frame Padding="10"
-                       Margin="10">
+                       Margin="10"
+                       BackgroundColor="PaleGoldenrod">
                     <VerticalStackLayout>
                         <Label Text="Período da Estadia"/>
                         
                         <HorizontalStackLayout>
                             <Label Text="Check-in:"/>
                             <DatePicker x:Name="dtpck_checkin"
-                                        Format="dd/MM/YYYY"/>
+                                        Format="dd/MM/YYYY"
+                                        DateSelected="dtpck_checkin_DateSelected"/>
 
                         </HorizontalStackLayout>
                         
@@ -87,7 +90,7 @@
                     </VerticalStackLayout>                   
                 </Frame>
 
-                <Button Text="Avançar"
+                <Button Text="Avançar" Clicked="Button_Clicked_1"
                         BackgroundColor="Black"
                         TextColor="Gold"/>
                 
